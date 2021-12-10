@@ -17,19 +17,19 @@ struct ContentView: View {
     
     
     // MARK: Computed Properties
-    var inchesToCentimetres: Double {
+    var inchesToCentimetres: Double? {
         return inches * 2.54
     }
     
-    var feetToMetres: Double {
+    var feetToMetres: Double? {
         return inches * 0.3048
     }
     
-    var yardsToMetres: Double {
+    var yardsToMetres: Double? {
         return inches * 0.9144
     }
     
-    var milesToKilometres: Double {
+    var milesToKilometres: Double? {
         return inches * 1.609344
     }
     
@@ -57,7 +57,9 @@ struct ContentView: View {
                         }
                         
                         HStack{
-                            TextField("Text Here", text: $inches)
+                            TextField("Inches Input",
+                                      text: $inches,
+                                      prompt: Text("Text Here"))
                                 .font(.title3)
                                 .padding()
                             Spacer()
@@ -97,7 +99,9 @@ struct ContentView: View {
                         }
                         
                         HStack{
-                            TextField("Text Here", text: $feet)
+                            TextField("Feet Input",
+                                      text: $feet,
+                                      prompt: Text("Text Here"))
                                 .font(.title3)
                                 .padding()
                             Spacer()
@@ -137,7 +141,9 @@ struct ContentView: View {
                         }
                         
                         HStack{
-                            TextField("Text Here", text: $yards)
+                            TextField("Yards Input",
+                                      text: $yards,
+                                      prompt: Text("Text Here"))
                                 .font(.title3)
                                 .padding()
                             Spacer()
@@ -177,7 +183,9 @@ struct ContentView: View {
                         }
                         
                         HStack{
-                            TextField("Text Here", text: $miles)
+                            TextField("Miles Input",
+                                      text: $miles,
+                                      prompt: Text("Text Here"))
                                 .font(.title3)
                                 .padding()
                             Spacer()
